@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c49ee0357653c4691b00f51d9921ae, type: 3}
+  m_Name: Boat
+  m_EditorClassIdentifier: 
+  enemyName: Boat
+  enemyHealth: 3
+  contactDamage: 1
+  enemyDeathPoints: 10
+  movement: 2
+  enemySpeed: 1
+  isHorizontaled: 0
+  isReversed: 0
+  enemyRigidbody: {fileID: 27943101482614035, guid: 37e94b3413c878e45934c9c487cd31ba,
+    type: 3}

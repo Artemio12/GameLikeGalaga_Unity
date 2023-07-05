@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\DestroyObject\DestroerObjectOnInvisible.cs" />
     <Compile Include="Assets\Scripts\EnemySpawn\VerticalSpawn\VerticalEnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Damage\ProjectileDamage\BulletDamage.cs" />
     <Compile Include="Assets\Scripts\Attack\AttackTypes\RocketGun.cs" />
@@ -65,11 +66,13 @@
     <Compile Include="Assets\Scripts\Movement\MovementControllers\Controller.cs" />
     <Compile Include="Assets\Scripts\Attack\AttackTypes\DefaultShootGun.cs" />
     <Compile Include="Assets\Scripts\Health\Health.cs" />
+    <Compile Include="Assets\Scripts\DataScripts\EnemyData.cs" />
     <Compile Include="Assets\Scripts\Attack\WeaponControllers\EnemyWeapon.cs" />
     <Compile Include="Assets\Scripts\EnemySpawn\HorizontalSpawn\HorizontalEnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Movement\MovementTypes\SineMovement.cs" />
     <Compile Include="Assets\Scripts\Attack\WeaponControllers\Weapon.cs" />
-    <Compile Include="Assets\Scripts\Damage\ContactDamage\ContactDamage.cs" />
+    <Compile Include="Assets\Scripts\Damage\ContactDamage\ContactDamager.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\StartGame.cs" />
     <Compile Include="Assets\Scripts\Movement\MovementTypes\ControlMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\MovementInterfaces\ITypeMovement.cs" />
     <Compile Include="Assets\Scripts\Attack\AttackTypes\TripleBulletGun.cs" />
@@ -86,7 +89,7 @@
     <Compile Include="Assets\Scripts\Damage\ProjectileDamage\Damage.cs" />
     <Compile Include="Assets\Scripts\Damage\ProjectileDamage\BombDamage.cs" />
     <Compile Include="Assets\Scripts\Camera\BoarderCameraController.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\StartGame.cs" />
+    <Compile Include="Assets\Scripts\DataScripts\ProjectileData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

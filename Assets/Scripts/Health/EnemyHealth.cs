@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
+    [SerializeField] private EnemyData enemyData;
     // private ScoreCounter scoreCounter = new ScoreCounter();
+    private float enemyHealth;
+    private int enemyDeathPoints;
 
-    [SerializeField,Min (0)] private int enemyScore;
+    private void Awake()
+    {
+        enemyHealth = enemyData.EnemyHealth;
+        enemyDeathPoints = enemyData.EnemyDeathPoints;
+    }
 
     public override void TakeDamage(float damage)
     {
-        health -= damage;
-        Debug.Log("Значение " + health);
-        if (health <= 0) Destroy(gameObject);
+        enemyHealth -= damage;
+        Debug.Log("Значение " + enemyHealth);
+        if (enemyHealth <= 0) Destroy(gameObject);
     }
 }

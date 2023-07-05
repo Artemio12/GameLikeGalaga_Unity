@@ -4,11 +4,6 @@ using UnityEngine;
 
 public abstract class Damage : MonoBehaviour
 {
-    [SerializeField, Min(0)] protected float damage;
-
-    protected void DoPlayerDamage(Collision collision)
-    {
-        Health health = collision.gameObject.GetComponent<PlayerHealth>();
-        health.TakeDamage(damage);
-    }
+    [SerializeField] protected ProjectileData projectileData;
+    protected ContactDamager contactDamager;
 }

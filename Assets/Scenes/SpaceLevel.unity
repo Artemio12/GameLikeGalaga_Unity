@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edf4f4d1a5b55a4c8b3bac638e9577f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  playerHealth: 3
   textComponent: {fileID: 34820534}
 --- !u!136 &12317103
 CapsuleCollider:
@@ -1574,8 +1574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 2047270809}
   spawnDelay: 5
-  enemyPrefabs:
-  - {fileID: 27943101482614035, guid: 37e94b3413c878e45934c9c487cd31ba, type: 3}
+  spawnData: {fileID: 11400000, guid: e6e7d3b60f1367f4386d976923373b75, type: 2}
 --- !u!1 &1433420988
 GameObject:
   m_ObjectHideFlags: 0

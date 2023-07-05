@@ -8,12 +8,12 @@ public class BulletDamage : Damage
     {
         Destroy(gameObject);
 
-       if (other.gameObject.CompareTag("Player")) DoPlayerDamage(other);
+       if (other.gameObject.CompareTag("Player")) contactDamager.DoPlayerDamage(other);
         
-       if (other.gameObject.tag == "Enemy")
+       if (other.gameObject.CompareTag( "Enemy"))
        {
           Health health = other.gameObject.GetComponent<EnemyHealth>();
-          health.TakeDamage(damage);
+          health.TakeDamage(projectileData.Damage);
        }
     }
 }

@@ -6,9 +6,10 @@ using UnityEngine;
 public class SineMovement : ITypeMovement
 {
     private Transform transform;
-    private Timer timer = new Timer();
+   // private Timer timer = new Timer();
 
     private bool isHorizontaled;
+    private float angle ;
 
     private float frequency;
     private float width;
@@ -27,16 +28,16 @@ public class SineMovement : ITypeMovement
 
     public void Move(Vector3 direction)
     {
-        float angle =  2 * Mathf.PI * (timer.TimeCount() / frequency);
+        //float angle =  2 * Mathf.PI * (timer.TimeCount() / frequency);
+        angle += Time.deltaTime * frequency;
 
         if (isHorizontaled)
         {
-            direction.y += width * Mathf.Sin(angle);
+            direction.y +=  width * Mathf.Sin(angle);
         }
         else direction.x += width * Mathf.Sin(angle);
 
         //transform.rotation = Quaternion.Euler(direction.x, direction.y,0);
-        //transform.position += direction;
         transform.Translate(direction);
     }
 }

@@ -162,7 +162,7 @@ MonoBehaviour:
   enemySpeed: 1
   isHorizontaled: 0
   isReversed: 0
-  waveWidth: 0.15
+  waveWidth: 1
 --- !u!114 &3496957581056058402
 MonoBehaviour:
   m_ObjectHideFlags: 0

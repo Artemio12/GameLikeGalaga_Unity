@@ -5,26 +5,19 @@ using UnityEngine;
 
 public class EnemyController : Controller
 {
-    [Header("Type of movement")]
-    [SerializeField] protected EnumMovement movement;
-   
-    [Header("Defolt movement parameters")]
-    public Transform enemyTransform;
-    [SerializeField] private float enemySpeed;
-    [SerializeField] private bool isHorizontaled;
-    [SerializeField] private bool isReversed;
-
+    [Header("Type of enemy")]
+    [SerializeField] private EnemyData enemyData;
+     private float enemySpeed;
     [Header("SineMovement")]
-    [SerializeField] private float waveWidth;
+    [SerializeField] private float amplitude;
     
-
     private void Awake()
     {
-        SetFactory(new SimpleMovementFactory(enemyTransform, enemySpeed,isReversed));
-        WaveWidth(waveWidth);
-        Horizontal(isHorizontaled);
+        SetFactory(new SimpleMovementFactory(this.transform, enemyData.EnemySpeed, enemyData.IsReversed));
+        WaveWidth(amplitude);
+        Horizontal(enemyData.IsHorizontaled);
 
-        SetTypeMovement(GetMovement(movement));
+        SetTypeMovement(GetMovement(enemyData.Movement));
     }
 
     private void FixedUpdate()

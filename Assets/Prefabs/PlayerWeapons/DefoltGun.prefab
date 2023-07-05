@@ -44,11 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32cd7ade1d712844abcf0e9bf1558320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAttack: 1
-  progectilePrefub: {fileID: 5622446145450505762, guid: fe7894313e05f0348b3ad4c0dd2545c5,
-    type: 3}
+  attack: 1
+  projectileData: {fileID: 11400000, guid: 9728ff7304bea0546ae0dbe6b3279318, type: 2}
   firePoint: {fileID: 8325119105703167897}
-  forse: 10
   cooldown: 0.1
 --- !u!1 &8325119105781625930
 GameObject:

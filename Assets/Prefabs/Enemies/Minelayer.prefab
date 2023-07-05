@@ -100,8 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2abd7b3772221be46b713681e4bde1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  enemyScore: 10
+  enemyData: {fileID: 0}
 --- !u!114 &5058146606436020664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe29450d874b1a54ca2e3ebb2763059c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
 --- !u!114 &5058146606436020665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,12 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3e20cf5a6165c4daa977c93d265367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: 2
-  enemyTransform: {fileID: 5058146606582894733}
-  enemySpeed: 1
-  isHorizontaled: 1
-  isReversed: 0
-  waveWidth: 0
+  enemyData: {fileID: 0}
+  amplitude: 0
 --- !u!114 &5058146606436020670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,11 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52249bf00ffe9d24bb27a095f939a506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAttack: 1
-  progectilePrefub: {fileID: 3684476184381092483, guid: 51f793761baf608499ae1b5ef43bc2c6,
-    type: 3}
+  attack: 1
+  projectileData: {fileID: 11400000, guid: 5fefb49b90bb88642a1ad64cbdcea1b4, type: 2}
   firePoint: {fileID: 5058146607110973160}
-  forse: 0
   cooldown: 2
 --- !u!65 &5058146606436020671
 BoxCollider:

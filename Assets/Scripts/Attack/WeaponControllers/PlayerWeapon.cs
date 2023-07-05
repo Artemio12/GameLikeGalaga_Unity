@@ -6,8 +6,8 @@ public class PlayerWeapon : Weapon
 {
     private void Awake()
     {
-        SetFactory(new GunWeaponFactory(firePoint, progectilePrefub, forse)); // подача параметров в экземпл€р класса фабрики
-        SetTypeGun(GetGun(playerAttack)); // ссылка на интерфейс
+        SetFactory(new GunWeaponFactory(firePoint, projectileData.ProjectileRigidbody, projectileData.Forse)); // подача параметров в экземпл€р класса фабрики
+        SetTypeGun(GetGun(attack)); // ссылка на интерфейс
     }
 
     private void FixedUpdate()

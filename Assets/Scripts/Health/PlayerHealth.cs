@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : Health
 {
+    [SerializeField] private float playerHealth;
     [SerializeField] private Text textComponent;
 
     private void Start()
@@ -14,14 +15,14 @@ public class PlayerHealth : Health
 
     public override void TakeDamage(float damage)
     {
-        health -= damage;
+        playerHealth -= damage;
         UITextHP();
-        Debug.Log("Значение " + health);
-        if (health <= 0) Destroy(gameObject);
+        Debug.Log("Значение " + playerHealth);
+        if (playerHealth <= 0) Destroy(gameObject);
     }
 
     private void UITextHP()
     {
-        if (gameObject.CompareTag("Player")) textComponent.text = "x" + health.ToString();
+        if (gameObject.CompareTag("Player")) textComponent.text = "x" + playerHealth.ToString();
     }
 }

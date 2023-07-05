@@ -5,13 +5,12 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour 
 {
     [Header("Referenses to components")]
-    [SerializeField] protected EnumAttack playerAttack;
-    [SerializeField] protected Rigidbody progectilePrefub;
+    [SerializeField] protected EnumAttack attack;
+    [SerializeField] protected ProjectileData projectileData;
     [SerializeField] protected Transform firePoint;
     [Header("Fight parameters")]
-    [SerializeField] protected float forse;
     [SerializeField, Min(0)] protected float cooldown;
- 
+
     protected WeaponFactory weaponFactory;
     private ITypeShootable typeGun;
 

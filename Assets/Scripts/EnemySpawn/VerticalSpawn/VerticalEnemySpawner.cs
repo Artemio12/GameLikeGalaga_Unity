@@ -15,9 +15,9 @@ public class VerticalEnemySpawner : EnemySpawner
         {
             spawnRange = Random.Range(-2, 2);
             Vector3 spawnArea = new Vector3(spawnRange, spawnPoint.position.y);
-            int i = Random.Range(0, enemyPrefabs.Count);
-            var enemy = GameObject.Instantiate(enemyPrefabs[i], spawnArea, Quaternion.identity);
-            i = 0;
+           // int i = Random.Range(0, enemyPrefabs.Count);
+            var enemy = GameObject.Instantiate(spawnData.EnemyRigidbody, spawnArea, Quaternion.identity);
+            //i = 0;
             timer.Counter = 0;
         }
     }
