@@ -1,22 +1,21 @@
 using UnityEngine;
 
-public class DefaulShootGun :  ITypeShootable
+public class DefaulShootGun : ITypeShootable
 {
+    private PoolMono<Rigidbody> poolMono;
     private Transform firePoint;
-    private Rigidbody bulletPrefab;
-
     private float bulletForse;
-
-    public DefaulShootGun(Transform firePoint, Rigidbody bulletPrefab, float bulletForse)
+  
+    public DefaulShootGun(Transform firePoint, PoolMono<Rigidbody> poolMono , float bulletForse)
     {
         this.firePoint = firePoint;
-        this.bulletPrefab = bulletPrefab;
+        this.poolMono = poolMono;
         this.bulletForse = bulletForse;
     }
 
     public void Attack()
     {
-       var bullet = GameObject.Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-       bullet.AddForce(firePoint.up * bulletForse, ForceMode.Impulse);
+        var projectile = poolMono.GetFreeElement(firePoint.position);
+        projectile.velocity = firePoint.up * bulletForse;
     }
 }

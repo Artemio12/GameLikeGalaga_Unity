@@ -4,6 +4,15 @@ using UnityEngine;
 
 public abstract class Damage : MonoBehaviour
 {
-    [SerializeField] protected ProjectileData projectileData;
-    protected ContactDamager contactDamager;
+    //protected ReturnerToPool returner = new ReturnerToPool();
+    protected int contactDamage = 1;
+    public void PlayerGetDamage(Collision collision)
+    {
+        Health health = collision.gameObject.GetComponent<PlayerHealth>();
+        health.TakeDamage(contactDamage);
+    }
+    public void ReturnToPool()
+    {
+        this.gameObject.SetActive(false);
+    }
 }

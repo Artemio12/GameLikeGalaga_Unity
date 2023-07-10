@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
+    //private ReturnerToPool returner;
     [SerializeField] private EnemyData enemyData;
     // private ScoreCounter scoreCounter = new ScoreCounter();
     private float enemyHealth;
@@ -20,6 +21,6 @@ public class EnemyHealth : Health
     {
         enemyHealth -= damage;
         Debug.Log("Значение " + enemyHealth);
-        if (enemyHealth <= 0) Destroy(gameObject);
+        if (enemyHealth <= 0) this.gameObject.SetActive(false);//this.returner.ReturnToPool();
     }
 }

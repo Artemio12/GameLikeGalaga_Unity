@@ -10,7 +10,7 @@ public enum EnumAttack
 
 public class GunWeaponFactory : WeaponFactory
 {
-    public GunWeaponFactory(Transform firePoint, Rigidbody projectile, float forse) : base(firePoint, projectile, forse) { }
+    public GunWeaponFactory(Transform firePoint, PoolMono<Rigidbody> poolMono, float forse) : base(firePoint, poolMono, forse) { }
      
     public override ITypeShootable CreateGun(EnumAttack enumAttack)
     {   
@@ -18,7 +18,7 @@ public class GunWeaponFactory : WeaponFactory
         switch (enumAttack)
         {
             case EnumAttack.DefaultShot:
-                typeGun = new DefaulShootGun(firePoint, projectile, forse);
+                typeGun = new DefaulShootGun(firePoint,poolMono, forse);
                 break;
             case EnumAttack.Rocket:
                 typeGun = new RocketGun();

@@ -35,7 +35,7 @@ public class ControlMovement : ITypeMovement
         float yAxis = Input.GetAxis("Vertical");
 
         direction.x += xAxis * speed * Time.deltaTime;
-       // direction.y += yAxis * speed * Time.deltaTime;
+        direction.y += yAxis * speed * Time.deltaTime;
 
         transform.Translate(direction, Space.World);
 

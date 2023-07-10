@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyMine
   m_EditorClassIdentifier: 
   projectileName: enemyMine
-  damage: 1
   forse: 1
+  poolCount: 4
   projectileRigidbody: {fileID: 3684476184381092483, guid: 51f793761baf608499ae1b5ef43bc2c6,
     type: 3}

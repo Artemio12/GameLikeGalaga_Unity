@@ -10,8 +10,8 @@ public class EnemyData : ScriptableObject
     [SerializeField,Min(0)] private float enemyHealth;
     public float EnemyHealth => enemyHealth;
 
-    [SerializeField,Min(0)] private int contactDamage = 1;
-    public int ContactDamage => contactDamage;
+    //[SerializeField,Min(0)] private int contactDamage = 1;
+    //public int ContactDamage => contactDamage;
 
     [SerializeField,Min(0)] private int enemyDeathPoints;
     public int EnemyDeathPoints => enemyDeathPoints;
@@ -30,6 +30,9 @@ public class EnemyData : ScriptableObject
     public bool IsReversed => isReversed;
 
     [Header("Spawn parameters")]
+    [SerializeField, Min(0)] private int poolCount;
+    public int PoolCount => poolCount;
+
     [SerializeField] private Rigidbody enemyRigidbody;
     public Rigidbody EnemyRigidbody => enemyRigidbody;
 }

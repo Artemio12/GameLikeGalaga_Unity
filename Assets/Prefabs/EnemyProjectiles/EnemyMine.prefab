@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f4778d8efa03842b69fb164f290811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  projectileData: {fileID: 11400000, guid: 5fefb49b90bb88642a1ad64cbdcea1b4, type: 2}
   timeDestraction: 3
 --- !u!135 &7948061237586670350
 SphereCollider:

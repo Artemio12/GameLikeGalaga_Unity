@@ -2,19 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour 
+public abstract class Weapon : MonoBehaviour
 {
+    private ITypeShootable typeGun;
+    protected ProjectilePool projectilePool;
+    protected PoolMono<Rigidbody> poolMono;
+    protected WeaponFactory weaponFactory;
+    protected Timer timer = new Timer();
+
     [Header("Referenses to components")]
     [SerializeField] protected EnumAttack attack;
     [SerializeField] protected ProjectileData projectileData;
+    [SerializeField] protected Transform projectileContainer;
+
     [SerializeField] protected Transform firePoint;
+    public Transform FirePoint => firePoint;    
+
     [Header("Fight parameters")]
+    [SerializeField] protected bool isAutoExpanded;
     [SerializeField, Min(0)] protected float cooldown;
-
-    protected WeaponFactory weaponFactory;
-    private ITypeShootable typeGun;
-
-    protected Timer timer = new Timer();
 
     protected void SetFactory(WeaponFactory factory)
     {

@@ -7,7 +7,6 @@ public class EnemyController : Controller
 {
     [Header("Type of enemy")]
     [SerializeField] private EnemyData enemyData;
-     private float enemySpeed;
     [Header("SineMovement")]
     [SerializeField] private float amplitude;
     

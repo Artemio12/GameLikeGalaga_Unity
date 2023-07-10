@@ -46,8 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 1
   projectileData: {fileID: 11400000, guid: 9728ff7304bea0546ae0dbe6b3279318, type: 2}
+  projectileContainer: {fileID: 8047899496404458972, guid: 765bd4a7c8d34504b83a2ae9d22f4ea0,
+    type: 3}
   firePoint: {fileID: 8325119105703167897}
-  cooldown: 0.1
+  isAutoExpanded: 0
+  cooldown: 0.2
 --- !u!1 &8325119105781625930
 GameObject:
   m_ObjectHideFlags: 0

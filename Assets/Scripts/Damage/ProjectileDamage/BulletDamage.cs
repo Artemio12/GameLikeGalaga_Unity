@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class BulletDamage : Damage
 {
+    
     public void OnCollisionEnter(Collision other)
     {
-        Destroy(gameObject);
-
-       if (other.gameObject.CompareTag("Player")) contactDamager.DoPlayerDamage(other);
         
-       if (other.gameObject.CompareTag( "Enemy"))
-       {
+        //returner.ReturnToPool();
+        //gameObject.SetActive(false);
+        ReturnToPool();
+
+        if (other.gameObject.CompareTag("Player")) PlayerGetDamage(other);
+
+        if (other.gameObject.CompareTag( "Enemy"))
+        {
           Health health = other.gameObject.GetComponent<EnemyHealth>();
-          health.TakeDamage(projectileData.Damage);
-       }
+          health.TakeDamage(contactDamage);
+        }
     }
 }

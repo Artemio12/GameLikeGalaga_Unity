@@ -7,6 +7,8 @@ public class PlayerHealth : Health
 {
     [SerializeField] private float playerHealth;
     [SerializeField] private Text textComponent;
+    [SerializeField] private GameObject gameOverPanel;
+    private PanelActivator panel = new PanelActivator();
 
     private void Start()
     {
@@ -18,7 +20,11 @@ public class PlayerHealth : Health
         playerHealth -= damage;
         UITextHP();
         Debug.Log("Значение " + playerHealth);
-        if (playerHealth <= 0) Destroy(gameObject);
+        if (playerHealth <= 0)
+        {
+            gameObject.SetActive(false);
+            panel.DoPanelActive(gameOverPanel);
+        }
     }
 
     private void UITextHP()

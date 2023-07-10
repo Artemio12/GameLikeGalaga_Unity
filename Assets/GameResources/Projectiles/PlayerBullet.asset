@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerBullet
   m_EditorClassIdentifier: 
   projectileName: playerBullet
-  damage: 1
-  forse: 10
+  forse: 7
+  poolCount: 15
   projectileRigidbody: {fileID: 5622446145450505762, guid: fe7894313e05f0348b3ad4c0dd2545c5,
     type: 3}

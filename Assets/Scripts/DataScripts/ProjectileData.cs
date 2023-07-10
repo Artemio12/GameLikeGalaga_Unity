@@ -9,15 +9,17 @@ public class ProjectileData : ScriptableObject
     [SerializeField] private string projectileName;
     public string ProjectileName => projectileName;
 
-    [SerializeField, Min(0)] private int damage;
-    public int Damage => damage;
+    
+
+    //[SerializeField, Min(0)] private int damage;
+    //public int Damage => damage;
 
     [Header("Spawn parameters")]
-    [SerializeField] private float forse;
+    [SerializeField,Min (0)] private float forse;
     public float Forse => forse;
 
-   // [SerializeField] private Transform firePoint;
-    //public Transform FirePoint => firePoint;
+    [SerializeField,Min (0)] private int poolCount;
+    public int PoolCount => poolCount;  
 
     [SerializeField] private Rigidbody projectileRigidbody;
     public Rigidbody ProjectileRigidbody => projectileRigidbody;

@@ -4,15 +4,16 @@ using UnityEngine;
 
 public abstract class WeaponFactory 
 {
-    protected Rigidbody projectile;
+    //protected Rigidbody projectile;
+    protected PoolMono<Rigidbody> poolMono;
     protected Transform firePoint;
 
     protected float forse;
 
-    public WeaponFactory(Transform firePoint, Rigidbody projectile, float forse)
+    public WeaponFactory(Transform firePoint, PoolMono<Rigidbody> poolMono, float forse)
     {
         this.firePoint = firePoint;
-        this.projectile = projectile;
+        this.poolMono = poolMono;
         this.forse = forse;
     }
 

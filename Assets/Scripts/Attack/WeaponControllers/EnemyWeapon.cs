@@ -6,7 +6,9 @@ public class EnemyWeapon : Weapon
 {
     private void Awake()
     {
-        SetFactory(new GunWeaponFactory(firePoint, projectileData.ProjectileRigidbody, projectileData.Forse)); // подача параметров в экземпл€р класса фабрики
+        projectilePool = new ProjectilePool(isAutoExpanded);
+        poolMono = projectilePool.CreateObjectsInPool(firePoint, projectileData.ProjectileRigidbody, projectileData.PoolCount);
+        SetFactory(new GunWeaponFactory(firePoint, poolMono, projectileData.Forse)); // подача параметров в экземпл€р класса фабрики
         SetTypeGun(GetGun(attack)); // ссылка на интерфейс
     }
 
@@ -21,6 +23,7 @@ public class EnemyWeapon : Weapon
         {
             WeaponType();
             timer.Counter = 0;
+
         }
     }
 }
