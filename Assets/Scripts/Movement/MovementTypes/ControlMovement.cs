@@ -39,6 +39,8 @@ public class ControlMovement : ITypeMovement
 
         transform.Translate(direction, Space.World);
 
-        transform.rotation = Quaternion.Euler(yAxis * roll , xAxis * pitch, 0);
+        transform.rotation = Quaternion.Euler(yAxis * roll, xAxis * pitch, 0);
+        
+        
     }
 }

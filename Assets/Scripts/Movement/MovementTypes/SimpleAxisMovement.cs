@@ -33,7 +33,6 @@ public class SimpleAxisMovement : ITypeMovement
         }
         else direction.y -= speed * Time.deltaTime;
 
-        //transform.position += direction;
         transform.Translate(direction);       
     }
 }

@@ -6,10 +6,9 @@ public class EnemyWeapon : Weapon
 {
     private void Awake()
     {
-        projectilePool = new ProjectilePool(isAutoExpanded);
-        poolMono = projectilePool.CreateObjectsInPool(firePoint, projectileData.ProjectileRigidbody, projectileData.PoolCount);
-        SetFactory(new GunWeaponFactory(firePoint, poolMono, projectileData.Forse)); // подача параметров в экземпл€р класса фабрики
-        SetTypeGun(GetGun(attack)); // ссылка на интерфейс
+        SetFactory(new GunFactory(firePoint, firePoint.root, gunData.Forse)); // подача параметров в экземпл€р класса фабрики
+        gunData.SetParametersInFactory(weaponFactory);
+        GetGun(gunData.Attack);
     }
 
     private void FixedUpdate()
@@ -19,11 +18,6 @@ public class EnemyWeapon : Weapon
 
     private void DoEnemyShoot()
     {
-        if (timer.TimeCount() >= cooldown)
-        {
-            WeaponType();
-            timer.Counter = 0;
-
-        }
+        WeaponType();
     }
 }

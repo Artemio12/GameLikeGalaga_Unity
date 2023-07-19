@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 public enum EnumMovement
 {
@@ -7,6 +8,7 @@ public enum EnumMovement
     ControlMovement = 1,
     SimpleAxisMovement = 2,
     SineMovement = 3,
+    MathTraectoryMovement = 4,
 }
 
 public class SimpleMovementFactory 
@@ -23,7 +25,10 @@ public class SimpleMovementFactory
     public bool IsHorisontaled { get; set; }
 
     private float waveWidth;
-    public float WaveWidth { get; set; }
+    public float Amplitude { get; set; }
+
+    private float radius;
+    public float Radius { get; set; }
 
     private float speed;
     public float Speed
@@ -39,7 +44,7 @@ public class SimpleMovementFactory
             else Debug.LogError("Error: Speed < 0");
         }
     }
-
+    public SimpleMovementFactory() { }
     public SimpleMovementFactory(Transform transform, float speed) 
     {
         this.transform = transform;
@@ -65,8 +70,12 @@ public class SimpleMovementFactory
                 typeMovement.Speed = speed;
                 break;
             case EnumMovement.SineMovement:
-                typeMovement = new SineMovement(transform,WaveWidth,IsHorisontaled);
+                typeMovement = new SineMovement(transform, Amplitude, IsHorisontaled);
                 typeMovement.Speed = speed;
+                break;
+            case EnumMovement.MathTraectoryMovement:
+                typeMovement = new MathTraectoryMovement(transform,Amplitude);
+                typeMovement.Speed = speed; 
                 break;
             default:
                 Debug.Log("Данного движения не существует");

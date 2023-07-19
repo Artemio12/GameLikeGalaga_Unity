@@ -10,7 +10,7 @@ public class Timer
     }
     public float TimeCount()
     {
-        this.timeCounter += Time.fixedDeltaTime;
+        this.timeCounter += Time.deltaTime;
         return this.timeCounter;
     }
 }

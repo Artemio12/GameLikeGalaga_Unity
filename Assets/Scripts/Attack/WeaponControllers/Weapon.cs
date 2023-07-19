@@ -5,22 +5,12 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     private ITypeShootable typeGun;
-    protected ProjectilePool projectilePool;
-    protected PoolMono<Rigidbody> poolMono;
     protected WeaponFactory weaponFactory;
-    protected Timer timer = new Timer();
 
     [Header("Referenses to components")]
-    [SerializeField] protected EnumAttack attack;
-    [SerializeField] protected ProjectileData projectileData;
-    [SerializeField] protected Transform projectileContainer;
-
+    [SerializeField] protected BaseGunData gunData;
     [SerializeField] protected Transform firePoint;
-    public Transform FirePoint => firePoint;    
-
-    [Header("Fight parameters")]
-    [SerializeField] protected bool isAutoExpanded;
-    [SerializeField, Min(0)] protected float cooldown;
+     public Transform FirePoint => firePoint;    
 
     protected void SetFactory(WeaponFactory factory)
     {
@@ -30,24 +20,15 @@ public abstract class Weapon : MonoBehaviour
             Debug.LogError("Error: SetFactory(AttackFactory factory) returns attackFactory == null");
         }
     }
-    protected void SetTypeGun(ITypeShootable attack)
+   
+    protected void GetGun(EnumAttack enumAttack)
     {
-        typeGun = attack;
+        typeGun = weaponFactory.GetWeapon(enumAttack); //получение нужного экземл€ра класса (из фабрики)
+                                                      //и присваивание его переменной typeGun; 
         if (typeGun == null)
         {
-            Debug.LogError("Error: SetTypeAttack(ITypeAttack attack) returns typeAttack == null");
+            Debug.LogError("Error: GetGun(EnumAttack enumAttack) returns typeGun == null");
         }
-    }
-
-    protected ITypeShootable GetGun(EnumAttack enumAttack)
-    {
-        ITypeShootable typeAttack = weaponFactory.CreateGun(enumAttack); //получение нужного экземл€ра класса (из фабрики)
-                                                                         //и присваивание его переменной typeAttack; 
-        if (typeAttack == null)
-        {
-            Debug.LogError("Error: GetAttack(EnumAttack enumAttack) returns typeAttack == null");
-        }
-        return typeAttack;
     }
 
     protected void WeaponType()

@@ -2,20 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class WeaponFactory 
+public abstract class WeaponFactory
 {
-    //protected Rigidbody projectile;
-    protected PoolMono<Rigidbody> poolMono;
+    private ITypeShootable typeWeapon;
+    protected PoolObjects<Rigidbody> pool;
     protected Transform firePoint;
+    protected Transform container;
+    protected float shootForse;
 
-    protected float forse;
+    public LineRenderer LineRenderer { get; set; }
+    public Rigidbody Projectile { get; set; }
 
-    public WeaponFactory(Transform firePoint, PoolMono<Rigidbody> poolMono, float forse)
+    public int PoolCount { get; set; }
+    public float Cooldown { get; set; }
+    public bool IsAutoExpanded { get; set; }
+
+    public WeaponFactory(Transform firePoint, Transform container, float shootForse)
     {
         this.firePoint = firePoint;
-        this.poolMono = poolMono;
-        this.forse = forse;
+        this.container = container;
+        this.shootForse = shootForse;
     }
 
-    public abstract ITypeShootable CreateGun(EnumAttack enumAttack);
+    public ITypeShootable GetWeapon(EnumAttack enumAttack)
+    {
+        typeWeapon = CreateGun(enumAttack);
+        return typeWeapon;
+    }
+
+    protected abstract ITypeShootable CreateGun(EnumAttack enumAttack);
 }

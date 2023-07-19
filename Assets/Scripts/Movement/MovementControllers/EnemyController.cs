@@ -6,15 +6,12 @@ using UnityEngine;
 public class EnemyController : Controller
 {
     [Header("Type of enemy")]
-    [SerializeField] private EnemyData enemyData;
-    [Header("SineMovement")]
-    [SerializeField] private float amplitude;
-    
+    [SerializeField] private BaseEnemyData enemyData;
+
     private void Awake()
     {
         SetFactory(new SimpleMovementFactory(this.transform, enemyData.EnemySpeed, enemyData.IsReversed));
-        WaveWidth(amplitude);
-        Horizontal(enemyData.IsHorizontaled);
+        enemyData.SetParemeterInFactory(movementFactory);
 
         SetTypeMovement(GetMovement(enemyData.Movement));
     }
@@ -27,17 +24,5 @@ public class EnemyController : Controller
     private void DoMove()
     {
         Move(direction);
-    }
-
-    public bool Horizontal(bool horizontal)
-    {
-        movementFactory.IsHorisontaled = horizontal;
-        return movementFactory.IsHorisontaled;
-    }
-
-    public float WaveWidth(float width)
-    {
-        movementFactory.WaveWidth = width;
-        return movementFactory.WaveWidth;
     }
 }

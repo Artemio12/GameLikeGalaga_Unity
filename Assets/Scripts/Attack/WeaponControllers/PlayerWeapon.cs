@@ -1,27 +1,39 @@
+using System.Collections;
+using System.ComponentModel;
 using UnityEngine;
 
 public class PlayerWeapon : Weapon
 {
+    private bool isComponentGot;
     private void Awake()
     {
-        projectilePool = new ProjectilePool(isAutoExpanded);
-        poolMono = projectilePool.CreateObjectsInPool(projectileContainer, projectileData.ProjectileRigidbody, projectileData.PoolCount);
+        SetFactory(new GunFactory(firePoint, firePoint.root, gunData.Forse)); // подача параметров в экземпл€р класса фабрики
+        gunData.SetParametersInFactory(weaponFactory);
+        GetLineRenderer();
+        GetGun(gunData.Attack);
+    }
 
-        SetFactory(new GunWeaponFactory(firePoint, poolMono, projectileData.Forse)); // подача параметров в экземпл€р класса фабрики
-        SetTypeGun(GetGun(attack)); // ссылка на интерфейс
+    private void Update()
+    {
+        if (isComponentGot) DoPlayerWeaponShoot();
     }
 
     private void FixedUpdate()
-    {       
-        DoPlayerWeaponShoot();  
+    {
+        if (Input.GetButton("Fire1")) DoPlayerWeaponShoot();
     }
 
     private void DoPlayerWeaponShoot()
     {
-        if (Input.GetButton("Fire1") && timer.TimeCount() >= cooldown)
+        WeaponType();
+    }
+
+    private void GetLineRenderer()
+    {
+        if (TryGetComponent<LineRenderer>(out LineRenderer component))
         {
-            WeaponType();
-            timer.Counter = 0;
+            isComponentGot = true;
+            weaponFactory.LineRenderer = component;
         }
     }
 }

@@ -5,22 +5,24 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
-    //private ReturnerToPool returner;
-    [SerializeField] private EnemyData enemyData;
-    // private ScoreCounter scoreCounter = new ScoreCounter();
-    private float enemyHealth;
-    private int enemyDeathPoints;
+    [SerializeField] private BaseEnemyData enemyData;
+    private float fullEnemyHealth;
+    private float currentHealth;
 
     private void Awake()
     {
-        enemyHealth = enemyData.EnemyHealth;
-        enemyDeathPoints = enemyData.EnemyDeathPoints;
+        fullEnemyHealth = enemyData.EnemyHealth;
+        currentHealth = fullEnemyHealth;
     }
 
     public override void TakeDamage(float damage)
     {
-        enemyHealth -= damage;
-        Debug.Log("Значение " + enemyHealth);
-        if (enemyHealth <= 0) this.gameObject.SetActive(false);//this.returner.ReturnToPool();
+        currentHealth -= damage;
+        Debug.Log($"ХП врага {currentHealth}");
+        if (currentHealth <= 0f)
+        {
+            this.gameObject.SetActive(false);
+            currentHealth = fullEnemyHealth;
+        }
     }
 }

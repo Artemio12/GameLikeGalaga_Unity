@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class Damage : MonoBehaviour
 {
-    //protected ReturnerToPool returner = new ReturnerToPool();
     protected int contactDamage = 1;
     public void PlayerGetDamage(Collision collision)
     {

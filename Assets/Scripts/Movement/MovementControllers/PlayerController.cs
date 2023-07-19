@@ -4,19 +4,15 @@ using UnityEngine;
 public class PlayerController : Controller
 {
     [Header("Motion parameters")]
-    [SerializeField] private Transform playerTransform;
     [SerializeField] private float playerSpeed;
     [SerializeField] private float playerRoll;
     [SerializeField] private float playerPitch;
 
-    public float PlayerSpeed => playerSpeed;
-
     public void Awake()
     {
-        SetFactory(new SimpleMovementFactory(playerTransform,playerSpeed));
-        SetRoll(playerRoll);
-        SetPitch(playerPitch);
-       
+        SetFactory(new SimpleMovementFactory(this.transform, playerSpeed));
+        SetParametersInFactory();
+
         SetTypeMovement(GetMovement(EnumMovement.ControlMovement));
     }
     
@@ -30,15 +26,9 @@ public class PlayerController : Controller
         Move(direction);
     }
 
-    private float SetRoll(float roll)
+    private void SetParametersInFactory()
     {
-        movementFactory.Roll = roll;
-        return movementFactory.Roll;
-    }
-
-    private float SetPitch(float pitch) 
-    {
-        movementFactory.Pitch = pitch;
-        return movementFactory.Pitch;
+        movementFactory.Pitch = playerPitch;
+        movementFactory.Roll = playerRoll;   
     }
 }

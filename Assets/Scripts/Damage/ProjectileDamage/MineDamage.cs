@@ -9,11 +9,11 @@ public class MineDamage : Damage
     private void Start()
     {
        // Destroy(gameObject,timeDestraction);
+       
     }
 
     public void OnCollisionEnter(Collision other)
     {
-        //returner.ReturnToPool();
         ReturnToPool();
 
         if (other.gameObject.CompareTag("Player")) PlayerGetDamage(other);

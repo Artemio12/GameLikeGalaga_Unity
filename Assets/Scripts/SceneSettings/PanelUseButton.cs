@@ -21,5 +21,4 @@ public class PanelUseButton : MonoBehaviour
     {
         Application.Quit();
     }
-   
 }
