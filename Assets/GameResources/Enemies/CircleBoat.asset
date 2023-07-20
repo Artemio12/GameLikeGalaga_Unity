@@ -21,6 +21,6 @@ MonoBehaviour:
   isReversed: 0
   enemyRigidbody: {fileID: 4312770169793441387, guid: 85218465be07fe9449766665ef027c15,
     type: 3}
-  poolCount: 10
+  poolEnemyCount: 5
   isAutoExpanded: 0
   amplitude: 0.05

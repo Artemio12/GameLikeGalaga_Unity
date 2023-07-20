@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-//[CreateAssetMenu(fileName = "EnemyData", menuName = "GameData/Enemies/PatrulBoat", order = 51)]
+
 public abstract class BaseEnemyData : ScriptableObject
 {
     [Header("Base parameters")]
@@ -35,13 +33,13 @@ public abstract class BaseEnemyData : ScriptableObject
     [SerializeField] protected Rigidbody enemyRigidbody;
     public Rigidbody EnemyRigidbody => enemyRigidbody;
 
-    [SerializeField, Min(0)] protected int poolCount;
-    public int PoolCount => poolCount;
+    [SerializeField, Min(0)] protected int poolEnemyCount;
+    public int PoolEnemyCount => poolEnemyCount;
 
     [SerializeField] protected bool isAutoExpanded;
     public bool IsAutoExpanded => isAutoExpanded;
 
-    protected void SetIsHorizontaledInFactory(SimpleMovementFactory movementFactory) => movementFactory.IsHorisontaled = this.isHorizontaled;
+    protected void SetIsHorizontaledInFactory(BaseMovementFactory movementFactory) => movementFactory.IsHorisontaled = this.isHorizontaled;
 
-    public abstract void SetParemeterInFactory(SimpleMovementFactory movementFactory);
+    public abstract void SetParemeterInFactory(BaseMovementFactory movementFactory);
 }

@@ -1,28 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class EnemyHealth : Health
 {
     [SerializeField] private BaseEnemyData enemyData;
-    private float fullEnemyHealth;
+    private float maxEnemyHealth;
     private float currentHealth;
 
     private void Awake()
     {
-        fullEnemyHealth = enemyData.EnemyHealth;
-        currentHealth = fullEnemyHealth;
+        maxEnemyHealth = enemyData.EnemyHealth;
+        currentHealth = maxEnemyHealth;
     }
 
     public override void TakeDamage(float damage)
     {
-        currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxEnemyHealth);
         Debug.Log($"ХП врага {currentHealth}");
-        if (currentHealth <= 0f)
+
+        if (currentHealth == 0f)
         {
             this.gameObject.SetActive(false);
-            currentHealth = fullEnemyHealth;
+            currentHealth = maxEnemyHealth;
         }
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class VerticalEnemySpawner : EnemySpawner
 {
-    
     private void Start()
     {
         CreateEnemyPool(enemyContainer);

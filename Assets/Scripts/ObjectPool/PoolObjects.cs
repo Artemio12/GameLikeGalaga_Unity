@@ -6,12 +6,9 @@ public class PoolObjects<T> where T : Rigidbody
     private Transform container;
 
     private T prefab;
-
+    private List<T> pool;
     public bool AutoExpand { private get; set; }
 
-    private List<T> pool;
-    //private Stack<T> poolStack;
-    
     public PoolObjects(Transform container)
     {
         this.container = container;

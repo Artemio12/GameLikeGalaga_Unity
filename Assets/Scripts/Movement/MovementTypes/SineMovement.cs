@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SineMovement : ITypeMovement
@@ -27,8 +24,7 @@ public class SineMovement : ITypeMovement
 
     public void Move(Vector3 direction)
     {
-        //float angle =  2 * Mathf.PI * (timer.TimeCount() / frequency);
-         angle +=  frequency * Time.deltaTime ;
+        angle += frequency * Time.deltaTime;
 
         if (isHorizontaled)
         {

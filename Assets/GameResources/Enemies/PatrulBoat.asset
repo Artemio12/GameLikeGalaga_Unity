@@ -19,7 +19,8 @@ MonoBehaviour:
   enemySpeed: 10
   isHorizontaled: 1
   isReversed: 0
-  poolCount: 1
   enemyRigidbody: {fileID: 3496957581056058404, guid: 3ff64ee9c02383c4bbc8a922395edde1,
     type: 3}
+  poolEnemyCount: 5
+  isAutoExpanded: 0
   amplitude: 1

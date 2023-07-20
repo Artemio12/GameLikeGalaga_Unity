@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class PlayerController : Controller
@@ -10,7 +9,7 @@ public class PlayerController : Controller
 
     public void Awake()
     {
-        SetFactory(new SimpleMovementFactory(this.transform, playerSpeed));
+        SetFactory(new DefaultMovementFactory(this.transform, playerSpeed));
         SetParametersInFactory();
 
         SetTypeMovement(GetMovement(EnumMovement.ControlMovement));

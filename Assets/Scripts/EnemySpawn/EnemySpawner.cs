@@ -4,21 +4,20 @@ using UnityEngine;
 
 public abstract class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] protected Transform spawnPoint;
-    [SerializeField] protected int spawnDelay;
-    //[SerializeField] protected bool isAutoExpanded;
-    [Header("Enemies")]
+    [Header("Spawn parameters")]
     [SerializeField] protected BaseEnemyData enemyData;
+    [SerializeField] protected Transform spawnPoint;
     [SerializeField] protected Transform enemyContainer;
 
-    protected Timer timer = new Timer();
-    //protected PoolCreator pool;
+    [SerializeField] protected int spawnDelay;
+
     protected PoolObjects<Rigidbody> poolMono;
+    protected Timer timer = new Timer();
     protected float spawnRange;
 
     protected void CreateEnemyPool(Transform container)
     {
-        PoolCreator pool = new PoolCreator(enemyData.EnemyRigidbody, enemyData.IsAutoExpanded, enemyData.PoolCount);
+        PoolCreator pool = new PoolCreator(enemyData.EnemyRigidbody, enemyData.IsAutoExpanded, enemyData.PoolEnemyCount);
         poolMono = pool.CreatePoolWithObjects(container);
     }
 

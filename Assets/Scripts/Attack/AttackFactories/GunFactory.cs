@@ -1,4 +1,3 @@
-using System.Globalization;
 using UnityEngine;
 
 public enum EnumAttack
@@ -11,7 +10,6 @@ public enum EnumAttack
 
 public class GunFactory : WeaponFactory
 {
-    // private LineRenderer lineRenderer;
     public GunFactory(Transform firePoint, Transform container, float shootForse) : base(firePoint, container, shootForse)
     {
         CreateProjectilePool(container);

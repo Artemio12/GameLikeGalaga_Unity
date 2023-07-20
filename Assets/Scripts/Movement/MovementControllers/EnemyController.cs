@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class EnemyController : Controller
@@ -10,7 +7,7 @@ public class EnemyController : Controller
 
     private void Awake()
     {
-        SetFactory(new SimpleMovementFactory(this.transform, enemyData.EnemySpeed, enemyData.IsReversed));
+        SetFactory(new DefaultMovementFactory(this.transform, enemyData.EnemySpeed, enemyData.IsReversed));
         enemyData.SetParemeterInFactory(movementFactory);
 
         SetTypeMovement(GetMovement(enemyData.Movement));

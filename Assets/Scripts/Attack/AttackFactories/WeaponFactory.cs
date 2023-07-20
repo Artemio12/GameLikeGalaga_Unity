@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class WeaponFactory
@@ -10,12 +8,12 @@ public abstract class WeaponFactory
     protected Transform container;
     protected float shootForse;
 
-    public LineRenderer LineRenderer { get; set; }
-    public Rigidbody Projectile { get; set; }
+    public LineRenderer LineRenderer { protected get; set; }
+    public Rigidbody Projectile { protected get; set; }
 
-    public int PoolCount { get; set; }
-    public float Cooldown { get; set; }
-    public bool IsAutoExpanded { get; set; }
+    public int PoolCount { protected get; set; }
+    public float Cooldown { protected get; set; }
+    public bool IsAutoExpanded { protected get; set; }
 
     public WeaponFactory(Transform firePoint, Transform container, float shootForse)
     {

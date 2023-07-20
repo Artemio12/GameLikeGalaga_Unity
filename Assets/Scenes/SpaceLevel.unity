@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 259408173}
   - component: {fileID: 259408172}
   m_Layer: 11
-  m_Name: Cube (1)
+  m_Name: UpBoarder
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 294273080}
   - component: {fileID: 294273077}
   m_Layer: 11
-  m_Name: Cube
+  m_Name: Asteroid
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1283,7 +1283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 783394311}
   m_Layer: 0
-  m_Name: horizontalSpawnPoint (1)
+  m_Name: HorizontalSpawnPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1947,7 +1947,7 @@ GameObject:
   - component: {fileID: 1198381503}
   - component: {fileID: 1198381502}
   m_Layer: 8
-  m_Name: 1Cub
+  m_Name: DownBoarder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1975,7 +1975,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198381500}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 15
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -2055,7 +2055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1207155036}
   m_Layer: 0
-  m_Name: verticalCenterSpawnArea (1)
+  m_Name: VerticalCenterSpawnArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2505,10 +2505,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7145abcdb838f514c99d04ff8c0d964d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 9994d74b4ae1614429527d042086b238, type: 2}
   spawnPoint: {fileID: 1207155036}
-  spawnDelay: 5
-  enemyData: {fileID: 11400000, guid: acf2375749e6ac3468a38250c8199518, type: 2}
   enemyContainer: {fileID: 228870803}
+  spawnDelay: 5
 --- !u!1 &1433420988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,7 +2519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1433420989}
   m_Layer: 0
-  m_Name: horizontalSpawnPoint
+  m_Name: HorizontalSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
