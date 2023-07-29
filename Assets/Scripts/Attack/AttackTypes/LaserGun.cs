@@ -5,7 +5,6 @@ public class LaserGun :  ITypeShootable
     private Transform firePoint;
     private LineRenderer beam;
     private float maxLength;
-    private Timer timer = new Timer();
 
     public LaserGun(Transform firePoint, LineRenderer beam, float maxLength)
     {
@@ -27,7 +26,6 @@ public class LaserGun :  ITypeShootable
             beam.SetPosition(1, hitPosition);
         } else { beam.enabled = false; }
        
-      
         //Debug.Log("вжжжжжиииииииииииу");
     }
 }

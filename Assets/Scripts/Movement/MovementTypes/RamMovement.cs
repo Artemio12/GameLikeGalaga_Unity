@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class RamMovement : MonoBehaviour
+public class RamMovement : ITypeMovement
 {
     private Transform transform;
+    private Transform targetTransform;
+    private Rigidbody rb;
     private float speed;
     public RamMovement(Transform transform)
     {

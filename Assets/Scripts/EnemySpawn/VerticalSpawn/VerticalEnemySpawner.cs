@@ -21,7 +21,7 @@ public class VerticalEnemySpawner : EnemySpawner
             spawnRange = Random.Range(-2, 2);
             Vector3 spawnArea = new Vector3(spawnRange, spawnPoint.position.y);
             // int i = Random.Range(0, enemyPrefabs.Count);
-            var enemy = this.poolMono.GetFreeElement(spawnArea);
+            var enemy = this.pool.GetFreeElement(spawnArea);
             //i = 0;
             timer.Counter = 0;
         }

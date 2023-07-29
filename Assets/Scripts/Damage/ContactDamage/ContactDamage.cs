@@ -4,10 +4,10 @@ public class ContactDamage : Damage
 {   
     public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.TryGetComponent(out PlayerHealth playerHealth))
         {
             ReturnToPool();
-            PlayerGetDamage(other);
+            PlayerGetDamage(playerHealth);
         }
 
         if (other.gameObject.CompareTag("Obstacle"))

@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c49ee0357653c4691b00f51d9921ae, type: 3}
   m_Name: MinelayerBoat
   m_EditorClassIdentifier: 
-  enemyName: Minelayer
-  enemyHealth: 3
-  enemyDeathPoints: 150
   movement: 2
-  enemySpeed: 2
-  isHorizontaled: 1
+  health: 0
+  speed: 1
   isReversed: 0
-  enemyRigidbody: {fileID: 5058146606436020668, guid: 909ed999c8e63bb409d48cf6d9786cd1,
+  rigidbody: {fileID: 5058146606436020668, guid: 909ed999c8e63bb409d48cf6d9786cd1,
     type: 3}
-  poolEnemyCount: 5
+  deathPoints: 150
+  isHorizontaled: 1
+  poolCount: 5
   isAutoExpanded: 0

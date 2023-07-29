@@ -2,28 +2,27 @@ using UnityEngine;
 
 public class MathTraectoryMovement : ITypeMovement
 {
-    private Transform transform;
-    private float speed;
+    private Rigidbody rigidbody;
+    private Timer timer = new Timer();
     private float radius;
-    private float angle;
-   
+
+    private float speed;
     public float Speed
     {
         set { this.speed = value; }
     }
 
-    public MathTraectoryMovement(Transform transform, float radius)
+    public MathTraectoryMovement(Rigidbody rigidbody, float radius)
     {
-        this.transform = transform;
+        this.rigidbody = rigidbody;
         this.radius = radius;
     }
 
     public void Move(Vector3 direction)
     {
-        angle += speed * Time.deltaTime;
-        direction.y += radius * Mathf.Sin(angle);
-        direction.x += radius * Mathf.Cos(angle);
-
-        transform.Translate(direction);
+        direction.x = radius * Mathf.Sin(speed * timer.TimeCount());
+        direction.y = radius * Mathf.Cos(speed * timer.TimeCount());
+       
+        rigidbody.velocity = direction;
     }
 }

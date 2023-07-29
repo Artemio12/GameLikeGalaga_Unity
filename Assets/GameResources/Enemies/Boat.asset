@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c49ee0357653c4691b00f51d9921ae, type: 3}
   m_Name: Boat
   m_EditorClassIdentifier: 
-  enemyName: Boat
-  enemyHealth: 3
-  enemyDeathPoints: 10
   movement: 2
-  enemySpeed: 1
-  isHorizontaled: 0
+  health: 3
+  speed: 1
   isReversed: 0
-  enemyRigidbody: {fileID: 4312770169793441387, guid: 37e94b3413c878e45934c9c487cd31ba,
+  rigidbody: {fileID: 4312770169793441387, guid: 37e94b3413c878e45934c9c487cd31ba,
     type: 3}
-  poolEnemyCount: 5
+  deathPoints: 10
+  isHorizontaled: 0
+  poolCount: 5
   isAutoExpanded: 0

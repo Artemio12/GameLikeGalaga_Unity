@@ -3,10 +3,9 @@ using UnityEngine;
 public abstract class Damage : MonoBehaviour
 {
     protected int contactDamage = 1;
-    public void PlayerGetDamage(Collision collision)
+    public void PlayerGetDamage(Health playerHealth)
     {
-        Health health = collision.gameObject.GetComponent<PlayerHealth>();
-        health.TakeDamage(contactDamage);
+        playerHealth.TakeDamage(contactDamage);
     }
     public void ReturnToPool()
     {

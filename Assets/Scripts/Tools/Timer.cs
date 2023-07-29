@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Timer 
+public sealed class Timer
 {
     private float timeCounter;
     public float Counter

@@ -4,7 +4,7 @@ public class BoarderCameraController : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Camera cam;
-    [SerializeField]private float boarderDistanse;
+    [SerializeField] private float boarderDistanse;
 
     private float leftBoarder;
     private float rightBoarder;

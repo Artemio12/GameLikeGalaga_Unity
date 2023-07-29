@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,18 +7,18 @@ public abstract class EnemySpawner : MonoBehaviour
     [SerializeField] protected BaseEnemyData enemyData;
     [SerializeField] protected Transform spawnPoint;
     [SerializeField] protected Transform enemyContainer;
-
+    [Space]
     [SerializeField] protected int spawnDelay;
+    //[Space]
+    //[SerializeField] protected List<BaseEnemyData> enemyDataList = new List<BaseEnemyData>();
 
-    protected PoolObjects<Rigidbody> poolMono;
     protected Timer timer = new Timer();
+    protected PoolObjects<Rigidbody> pool;
     protected float spawnRange;
 
     protected void CreateEnemyPool(Transform container)
     {
-        PoolCreator pool = new PoolCreator(enemyData.EnemyRigidbody, enemyData.IsAutoExpanded, enemyData.PoolEnemyCount);
-        poolMono = pool.CreatePoolWithObjects(container);
+        pool = new PoolObjects<Rigidbody>(enemyContainer, enemyData.Rigidbody, enemyData.PoolCount);
+        pool.AutoExpand = enemyData.IsAutoExpanded;
     }
-
-    //[SerializeField] protected List<Rigidbody> enemyPrefabs = new List<Rigidbody>();
 }

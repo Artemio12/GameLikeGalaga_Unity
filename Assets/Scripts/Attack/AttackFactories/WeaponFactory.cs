@@ -1,5 +1,13 @@
 using UnityEngine;
 
+public enum EnumAttack
+{
+    None = 0,
+    DefaultShot = 1,
+    Rocket = 2,
+    Laser = 3,
+}
+
 public abstract class WeaponFactory
 {
     private ITypeShootable typeWeapon;

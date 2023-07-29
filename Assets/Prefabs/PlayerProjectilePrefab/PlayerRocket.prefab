@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 374844640718523331}
   - component: {fileID: 1071902373104574941}
   - component: {fileID: 7987523398142545598}
-  - component: {fileID: 8235936401089572376}
   - component: {fileID: 9009637781411038672}
+  - component: {fileID: 8235936401089572376}
   - component: {fileID: 9095494720448606727}
   m_Layer: 7
   m_Name: PlayerRocket
@@ -84,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9009637781411038672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094033185522018956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4795b99166f7c44b841edd85d89459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
 --- !u!136 &8235936401089572376
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -98,19 +111,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9009637781411038672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094033185522018956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d4795b99166f7c44b841edd85d89459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 1
 --- !u!54 &9095494720448606727
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,5 +125,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0

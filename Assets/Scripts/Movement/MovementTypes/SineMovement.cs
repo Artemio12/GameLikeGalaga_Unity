@@ -1,37 +1,35 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SineMovement : ITypeMovement
 {
-    private Transform transform;
-
+    private Timer timer = new Timer();
+    private Rigidbody rigidbody;
     private bool isHorizontaled;
 
-    private float frequency;
-    private float width;
-    private float angle;
-
+    private float speed;
+    private float amplitude;
+   
     public float Speed
     {
-        set { this.frequency = value; }
+        set { this.speed = value; }
     }
 
-    public SineMovement(Transform transform, float width, bool isHorizontaled)
+    public SineMovement(Rigidbody rigidbody, float amplitude, bool isHorizontaled)
     {
-        this.transform = transform;
-        this.width = width;
+        this.rigidbody = rigidbody;
+        this.amplitude = amplitude;
         this.isHorizontaled = isHorizontaled;
     }
 
     public void Move(Vector3 direction)
     {
-        angle += frequency * Time.deltaTime;
-
         if (isHorizontaled)
         {
-            direction.y +=  width * Mathf.Sin(angle);
+            direction.x = amplitude * Mathf.Sin(speed * timer.TimeCount());
         }
-        else direction.x += width * Mathf.Sin(angle);
+        else direction.y = amplitude * Mathf.Sin(speed * timer.TimeCount());
 
-        transform.Translate(direction);
+        rigidbody.velocity = direction;
     }
 }

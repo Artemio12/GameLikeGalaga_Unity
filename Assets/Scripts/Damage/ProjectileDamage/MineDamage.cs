@@ -14,12 +14,11 @@ public class MineDamage : Damage
     {
         ReturnToPool();
 
-        if (other.gameObject.CompareTag("Player")) PlayerGetDamage(other);
+        if (other.gameObject.TryGetComponent(out PlayerHealth playerHealth)) PlayerGetDamage(playerHealth);
 
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.TryGetComponent(out EnemyHealth enemyHealth))
         {
-            Health health = other.gameObject.GetComponent<EnemyHealth>();
-            health.TakeDamage(contactDamage);
+            enemyHealth.TakeDamage(contactDamage);
         }
     }
 }

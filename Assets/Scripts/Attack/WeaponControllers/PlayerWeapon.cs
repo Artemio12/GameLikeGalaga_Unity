@@ -11,7 +11,7 @@ public class PlayerWeapon : Weapon
         GetGun(gunData.Attack);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (isComponentGot) DoPlayerWeaponShoot();
     }

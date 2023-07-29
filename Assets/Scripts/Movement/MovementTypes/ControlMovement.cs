@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class ControlMovement : ITypeMovement
 {
-    public Transform transform;
-
+    private Rigidbody rigidbody;
     private float roll;
     private float pitch;
 
@@ -13,12 +12,12 @@ public class ControlMovement : ITypeMovement
         set { this.speed = value; }
     }
    
-    public ControlMovement(Transform transform)
+    public ControlMovement(Rigidbody rigidbody)
     {
-        this.transform = transform;
+        this.rigidbody = rigidbody;
     }
 
-    public ControlMovement(Transform transform, float roll, float pitch) :this(transform)
+    public ControlMovement(Rigidbody rigidbody, float roll, float pitch) :this(rigidbody)
     {
         this.roll = roll;
         this.pitch = pitch;
@@ -26,16 +25,10 @@ public class ControlMovement : ITypeMovement
 
     public void Move(Vector3 direction)
     {
-        float xAxis = Input.GetAxis("Horizontal");
-        float yAxis = Input.GetAxis("Vertical");
-
-        direction.x += xAxis * speed * Time.deltaTime;
-        direction.y += yAxis * speed * Time.deltaTime;
-
-        transform.Translate(direction, Space.World);
-
-        transform.rotation = Quaternion.Euler(yAxis * roll, xAxis * pitch, 0);
+        direction.x = speed * Input.GetAxis("Horizontal");
+        direction.y = speed * Input.GetAxis("Vertical");
         
-        
+        rigidbody.velocity = direction;
+        rigidbody.rotation = Quaternion.Euler(direction.y * roll, direction.x * pitch, 0f);
     }
 }

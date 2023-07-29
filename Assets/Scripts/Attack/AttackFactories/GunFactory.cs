@@ -1,14 +1,6 @@
 using UnityEngine;
 
-public enum EnumAttack
-{
-    None = 0,
-    DefaultShot = 1,
-    Rocket = 2,
-    Laser = 3,
-}
-
-public class GunFactory : WeaponFactory
+public sealed class GunFactory : WeaponFactory
 {
     public GunFactory(Transform firePoint, Transform container, float shootForse) : base(firePoint, container, shootForse)
     {
@@ -28,7 +20,6 @@ public class GunFactory : WeaponFactory
                 break;
             case EnumAttack.Laser:
                 typeGun = new LaserGun(firePoint, LineRenderer, shootForse);
-                Debug.Log("отработал");
                 break;
             default:
                 Debug.LogError("Ошибка, тип атаки не существует");
@@ -37,7 +28,7 @@ public class GunFactory : WeaponFactory
         return typeGun;
     }
 
-    protected PoolObjects<Rigidbody> CreateProjectilePool(Transform container)
+    private PoolObjects<Rigidbody> CreateProjectilePool(Transform container)
     {
         pool = new PoolObjects<Rigidbody>(container, Projectile, PoolCount);
         pool.AutoExpand = IsAutoExpanded;

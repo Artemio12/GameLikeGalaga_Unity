@@ -1,12 +1,22 @@
 using UnityEngine;
 
-public abstract class BaseMovementFactory
+public enum EnumMovement
 {
-    protected Transform transform;
+    None = 0,
+    ControlMovement = 1,
+    SimpleAxisMovement = 2,
+    SineMovement = 3,
+    MathTraectoryMovement = 4,
+    FullRotationMovement = 5,
+    RamMovement = 6,
+}
+
+public abstract class BaseMovementFactory
+{  
     protected float speed;
     public float Speed
     {
-        get { return speed; }
+        protected get { return speed; }
         set
         {
             if (value >= 0)
@@ -20,18 +30,12 @@ public abstract class BaseMovementFactory
 
     public float Roll { protected get; set; }
     public float Pitch { protected get; set; }
-    public bool IsHorisontaled { protected get; set; }
     public float Amplitude { protected get; set; }
-    public float Radius { protected get; set; }
+    public bool IsHorisontaled { protected get; set; }
 
-    public BaseMovementFactory(Transform transform, float speed)
+    public BaseMovementFactory(float speed, bool isReversed)
     {
-        this.transform = transform;
         this.Speed = speed;
-    }
-
-    public BaseMovementFactory(Transform transform, float speed, bool isReversed): this(transform, speed) 
-    {
         if (isReversed) this.speed = -this.Speed;
     }
 

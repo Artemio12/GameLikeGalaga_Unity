@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Explosion : ITypeShootable
 {
+    private Transform centerExplosion;
     private float radiusExplosion;
     private float forseExplosion = 10f;
     private float damage = 2f;
-    private Transform centerExplosion;
-
+    
     public Explosion(Transform centerExplosion, float radiusExplosion)
     {
         this.centerExplosion = centerExplosion;
-         this.radiusExplosion = radiusExplosion;
+        this.radiusExplosion = radiusExplosion;
     }
 
     public void Attack()

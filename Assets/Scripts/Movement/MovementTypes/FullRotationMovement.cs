@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class FullRotationMovement : ITypeMovement
 {
-    private Transform transform;
+    private Rigidbody rigidbody;
     private float speed;
-    public FullRotationMovement(Transform transform) 
+    public FullRotationMovement(Rigidbody rigidbody) 
     { 
-        this.transform = transform;
+        this.rigidbody = rigidbody;
     }
     public float Speed 
     {
@@ -15,8 +15,7 @@ public class FullRotationMovement : ITypeMovement
 
     public void Move(Vector3 direction)
     {
-        direction = transform.forward * speed;
-        transform.Rotate(direction);
+       direction.z = speed;
+       rigidbody.AddTorque(direction);
     }
-   
 }

@@ -8,7 +8,7 @@ public class EnemyHealth : Health
 
     private void Awake()
     {
-        maxEnemyHealth = enemyData.EnemyHealth;
+        maxEnemyHealth = enemyData.Health;
         currentHealth = maxEnemyHealth;
     }
 

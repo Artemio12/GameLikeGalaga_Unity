@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1858ca0ed6c0740b08eb0bf81d92fc, type: 3}
   m_Name: CircleBoat
   m_EditorClassIdentifier: 
-  enemyName: PatrulBoat
-  enemyHealth: 3
-  enemyDeathPoints: 15
   movement: 4
-  enemySpeed: 1
-  isHorizontaled: 0
+  health: 0
+  speed: 5
   isReversed: 0
-  enemyRigidbody: {fileID: 4312770169793441387, guid: 85218465be07fe9449766665ef027c15,
+  rigidbody: {fileID: 4312770169793441387, guid: 85218465be07fe9449766665ef027c15,
     type: 3}
-  poolEnemyCount: 5
+  deathPoints: 15
+  isHorizontaled: 0
+  poolCount: 5
   isAutoExpanded: 0
-  amplitude: 0.05
+  amplitude: 1
