@@ -5,6 +5,7 @@ public class LaserGun :  ITypeShootable
     private Transform firePoint;
     private LineRenderer beam;
     private float maxLength;
+    private float damage = 0.3f;
 
     public LaserGun(Transform firePoint, LineRenderer beam, float maxLength)
     {
@@ -17,15 +18,14 @@ public class LaserGun :  ITypeShootable
     {
         Ray ray = new Ray(firePoint.position, firePoint.up);
         bool cast = Physics.Raycast(ray, out RaycastHit hit, maxLength);
-        Vector3 hitPosition = cast ? hit.point : firePoint.position + firePoint.up * maxLength; 
+        Vector3 hitPosition = cast ? hit.point : firePoint.position + firePoint.up * maxLength;
+        beam.enabled = true;
+        beam.SetPosition(0, firePoint.position);
+        beam.SetPosition(1, hitPosition);
 
-        if (Input.GetButton("Fire1"))
+        if (cast && hit.collider.TryGetComponent(out Health health))
         {
-            beam.enabled = true;
-            beam.SetPosition(0, firePoint.position);
-            beam.SetPosition(1, hitPosition);
-        } else { beam.enabled = false; }
-       
-        //Debug.Log("вжжжжжиииииииииииу");
+            health.TakeDamage(damage * Time.fixedDeltaTime);
+        }
     }
 }

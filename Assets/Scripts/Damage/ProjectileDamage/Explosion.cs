@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Explosion : ITypeShootable
+public class Explosion
 {
     private Transform centerExplosion;
     private float radiusExplosion;
-    private float forseExplosion = 10f;
+    private float forseExplosion = 15f;
     private float damage = 2f;
     
     public Explosion(Transform centerExplosion, float radiusExplosion)
@@ -16,14 +16,15 @@ public class Explosion : ITypeShootable
     public void Attack()
     {
         // массив коллайдеров в сфере с центров в transform.position и радиусом radiusExplosion  
-        Collider[] collider = Physics.OverlapSphere(centerExplosion.position, radiusExplosion);
-        for (int i = 0; i < collider.Length; i++)
+        Collider[] colliders = Physics.OverlapSphere(centerExplosion.position, radiusExplosion);
+        for (int i = 0; i < colliders.Length; i++)
         {
-            if (collider[i].TryGetComponent(out Rigidbody rb))
+            if (colliders[i].TryGetComponent(out Rigidbody rb))
             {
-                rb.AddExplosionForce(forseExplosion, centerExplosion.position, radiusExplosion);
+                Vector3 direction = (colliders[i].transform.position - centerExplosion.position).normalized;
+                rb.AddForce(direction * forseExplosion, ForceMode.Impulse);
             }
-            if (collider[i].TryGetComponent(out Health health))
+            if (colliders[i].TryGetComponent(out EnemyHealth health))
             {
                 health.TakeDamage(damage);
             }

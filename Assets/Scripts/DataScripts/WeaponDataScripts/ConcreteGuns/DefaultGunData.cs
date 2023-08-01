@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GunData_default", menuName = "GameData/Guns/DefaultGun")]
+[CreateAssetMenu(fileName = "DefaultBulletGun", menuName = "GameData/Guns/DefaultBulletGun")]
 public class DefaultGunData : BaseGunWithPoolData
 {
     private BaseGunData baseGun;
@@ -10,12 +10,12 @@ public class DefaultGunData : BaseGunWithPoolData
         this.baseGun = baseGun;
     }
 
-    public override void SetParametersInFactory(WeaponFactory gunFactory)
+    public override void SetParametersInFactory(BaseWeaponFactory weaponFactory)
     {
-        gunFactory.Cooldown = cooldown;
-        gunFactory.Projectile = projectile.ProjectileRigidbody;
-        gunFactory.PoolCount = poolCount;
-        gunFactory.IsAutoExpanded = IsAutoExpanded;
+        weaponFactory.Cooldown = cooldown;
+        weaponFactory.Projectile = projectile.ProjectileRigidbody;
+        weaponFactory.PoolCount = poolCount;
+        weaponFactory.IsAutoExpanded = IsAutoExpanded;
     }
 
 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-
+// Need Use Singleton
 public class ControlMovement : ITypeMovement
 {
     private Rigidbody rigidbody;
@@ -11,13 +11,13 @@ public class ControlMovement : ITypeMovement
     {
         set { this.speed = value; }
     }
-   
+
     public ControlMovement(Rigidbody rigidbody)
     {
         this.rigidbody = rigidbody;
     }
 
-    public ControlMovement(Rigidbody rigidbody, float roll, float pitch) :this(rigidbody)
+    public ControlMovement(Rigidbody rigidbody, float roll, float pitch) : this(rigidbody)
     {
         this.roll = roll;
         this.pitch = pitch;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4c1a0bfa1bd6643a391390af318ae0, type: 3}
   m_Name: PlayerRocketGunData
   m_EditorClassIdentifier: 
-  attack: 1
+  typeWeapon: 1
   forse: 7
   cooldown: 3
   projectile: {fileID: 11400000, guid: 60e95022158dc2c41aea6e4c16e595fa, type: 2}

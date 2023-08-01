@@ -10,7 +10,7 @@ public class PhysicalMover : BaseMover
     private void Awake()
     {
         GetRigidbody();
-        SetFactory(new PhysicalMovementFactory(body, characterData.Speed, characterData.IsReversed));
+        SetFactory(new PhysicalMovementFactory( body, characterData.Speed, characterData.IsReversed));
         characterData.SetParametersInFactory(movementFactory);
 
         SetTypeMovement(GetMovement(characterData.Movement));

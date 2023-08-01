@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public abstract class BaseWeapon : MonoBehaviour
 {
+    protected BaseWeaponFactory weaponFactory;
     private ITypeShootable typeGun;
-    protected WeaponFactory weaponFactory;
-
+    
     [Header("Referenses to components")]
     [SerializeField] protected BaseGunData gunData;
     [SerializeField] protected Transform firePoint;
-     public Transform FirePoint => firePoint;    
+    [SerializeField] protected bool isPlayerGun;
 
-    protected void SetFactory(WeaponFactory factory)
+    protected void SetWeaponFactory(BaseWeaponFactory factory)
     {
         weaponFactory = factory;
         if (weaponFactory == null) 
@@ -19,13 +19,13 @@ public abstract class Weapon : MonoBehaviour
         }
     }
    
-    protected void GetGun(EnumAttack enumAttack)
+    protected void GetWeapon(EnumWeapon typeWeapon)
     {
-        typeGun = weaponFactory.GetWeapon(enumAttack); //получение нужного экземл€ра класса (из фабрики)
+        typeGun = this.weaponFactory.GetWeapon(typeWeapon); //получение нужного экземл€ра класса (из фабрики)
                                                       //и присваивание его переменной typeGun; 
         if (typeGun == null)
         {
-            Debug.LogError("Error: GetGun(EnumAttack enumAttack) returns typeGun == null");
+            Debug.LogError("Error: GetWeapon(EnumAttack enumAttack) returns typeGun == null");
         }
     }
 
@@ -33,4 +33,6 @@ public abstract class Weapon : MonoBehaviour
     {
         typeGun.Attack();
     }
+
+    protected abstract void Shoot();
 }

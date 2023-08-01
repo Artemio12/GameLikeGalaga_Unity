@@ -6,7 +6,6 @@ public class MineDamage : Damage
 
     private void Start()
     {
-       // Destroy(gameObject,timeDestraction);
        
     }
 

@@ -17,10 +17,6 @@ public class RocketDamage : Damage
     private void OnCollisionEnter(Collision other)
     {
         ReturnToPool();
-       
-        if (other.gameObject.CompareTag("Enemy"))
-        { 
-            explosion.Attack();
-        }
+        explosion.Attack();
     }
 }

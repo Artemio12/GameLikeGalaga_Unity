@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3496957581056058401}
   - component: {fileID: 3496957581056058400}
   - component: {fileID: 3496957581056058403}
-  - component: {fileID: 3496957581056058402}
+  - component: {fileID: 6577310206565331479}
   - component: {fileID: 3496957581056058405}
   - component: {fileID: 3496957581056058404}
   m_Layer: 8
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: aeb11904cb8d68240b7ca3137b50700b, type: 2}
---- !u!114 &3496957581056058402
+--- !u!114 &6577310206565331479
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3496957581056058407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52249bf00ffe9d24bb27a095f939a506, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d4036631831de94b8f1c062c37fad55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gunData: {fileID: 11400000, guid: 51f7378f83b6b444397a0811d844a3c7, type: 2}

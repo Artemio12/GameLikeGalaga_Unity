@@ -1,11 +1,13 @@
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 
 public class PlayerHealth : Health
 {
-    [SerializeField] private float playerHealth;
-    [SerializeField] private Text textComponent;
+    [SerializeField] private CameraShaker cameraShaker;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private Text textComponent;
+    [SerializeField] private float playerHealth;
+
     private PanelActivator panel = new PanelActivator();
 
     private void Start()
@@ -15,6 +17,7 @@ public class PlayerHealth : Health
 
     public override void TakeDamage(float damage)
     {
+        cameraShaker.Shake();
         playerHealth -= damage;
         UITextHP();
         Debug.Log("Значение " + playerHealth);
@@ -27,6 +30,6 @@ public class PlayerHealth : Health
 
     private void UITextHP()
     {
-        if (gameObject.CompareTag("Player")) textComponent.text = "x" + playerHealth.ToString();
+        textComponent.text = "x" + playerHealth.ToString();
     }
 }

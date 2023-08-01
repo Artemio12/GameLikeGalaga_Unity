@@ -6,9 +6,10 @@ public class DefaulShootGun : ITypeShootable
     private Transform firePoint;
     private float bulletForse;
     private float cooldown;
+
     private Timer timer = new Timer();
   
-    public DefaulShootGun(Transform firePoint, PoolObjects<Rigidbody> poolMono , float bulletForse, float cooldown)
+    public DefaulShootGun(Transform firePoint, PoolObjects<Rigidbody> poolMono, float bulletForse, float cooldown)
     {
         this.firePoint = firePoint;
         this.poolMono = poolMono;

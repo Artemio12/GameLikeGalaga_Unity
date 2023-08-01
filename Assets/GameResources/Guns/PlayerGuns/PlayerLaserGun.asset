@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620698fd71e074741b6d90ea92bcc99e, type: 3}
   m_Name: PlayerLaserGun
   m_EditorClassIdentifier: 
-  attack: 3
+  typeWeapon: 3
   forse: 14.5
   cooldown: 2
   lineRenderer: {fileID: 4195034125368494829, guid: 99efd8bb30991e04e9d67f8beae728c7,

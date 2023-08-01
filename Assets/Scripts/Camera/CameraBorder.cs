@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BoarderCameraController : MonoBehaviour
+public class CameraBorder : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Camera cam;
