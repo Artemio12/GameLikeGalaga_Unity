@@ -8,6 +8,7 @@ The game contains:
 4. Laser gun logic (not finish yet);
 5. Camera logic (maybe change);
 6. Simple start, pause and game over menu (will be changed);
+7. Generic object pool;
 
 Patterns that are used in this application:
 1. Strategy;
